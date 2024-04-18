@@ -1,47 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
 
-<head>
+    <title>Dark Mode | Vanilla JS Projects</title>
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+    <link rel="stylesheet" crossorigin href="../assets/pico.css" />
+    <link rel="stylesheet" crossorigin href="../assets/darklight.css" />
+  </head>
 
-	<title>Dark Mode | Vanilla JS Projects</title>
+  <body class="container grid">
+    <header>
+      <h1>dark mode</h1>
+    </header>
 
-  <link rel="stylesheet" crossorigin href="../assets/pico.css">
-  <link rel="stylesheet" crossorigin href="../assets/darklight.css">
-</head>
+    <nav style="align-self: center">
+      <label>
+        <input
+          type="checkbox"
+          id="toggle"
+          name="toggle"
+          role="switch"
+          checked
+        />
+        Use dark mode
+      </label>
+    </nav>
 
-<body class="container grid">
-	<header>
-		<h1>dark mode</h1>
-	</header>
+    <main>
+      <article>
+        <main id="darklight"></main>
+      </article>
+    </main>
 
-	<nav style="align-self:center;">
+    <footer></footer>
+    <script id="theme.js">
+      const toggle = document.getElementById("toggle");
+      const pageTheme = document.querySelector("html[data-theme]");
 
-		<label>
-			<input type="checkbox" id="toggle" name="toggle" role="switch" checked>
-			Use dark mode
-		</label>
-
-	</nav>
-
-	<main>
-		<article>
-
-			<main id="darklight"></main>
-
-		</article>
-	</main>
-
-	<footer>
-
-
-	</footer>
-	<script id="theme.js">
-
-	</script>
-</body>
-
+      toggle.addEventListener("click", (e) => {
+        if (toggle.checked) {
+          pageTheme.setAttribute("data-theme", "dark");
+        } else {
+          pageTheme.setAttribute("data-theme", "light");
+        }
+      });
+    </script>
+  </body>
 </html>
